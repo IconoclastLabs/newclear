@@ -18,9 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
+### Run either of these lovely commands and then take a LONG walk.
+
+`[bundle exec] rake nuke`
+
+`nuke` clears everything.  Which actually just runs `rake clean:all && reset-sim && bundle && pod setup && rake pod:install`
+
+
 `[bundle exec] rake newclear`
 
-Which actually just runs `bundle exec rake clean:all && reset-sim && bundle && bundle exec pod setup && bundle exec rake pod:install && bundle exec rake`
+`newclear` gives you a new and clear run of your build.  This runs `nuke` and then `rake`.
 
 ## Contributing
 
