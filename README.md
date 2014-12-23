@@ -6,11 +6,12 @@
 
 ### Run either of these lovely commands and then take a _LONG_ walk.
 
+#### nuke
 `[bundle exec] rake nuke`
 
 `nuke` clears everything.  Which actually just runs `rake clean:all && reset-sim && bundle && pod setup && rake pod:install`
 
-
+#### newclear
 `[bundle exec] rake newclear`
 
 `newclear` gives you a new and clear run of your build.  This runs `nuke` and then `rake`.
