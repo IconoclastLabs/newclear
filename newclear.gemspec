@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
-VERSION = "0.3"
+VERSION = "0.4"
 
 Gem::Specification.new do |spec|
   spec.name          = "newclear"
   spec.version       = VERSION
   spec.authors       = ["Gant"]
   spec.email         = ["GantMan@gmail.com"]
-  spec.description   = %q{Write a gem description}
-  spec.summary       = %q{Write a gem summary}
+  spec.description   = %q{Add the nuke/newclear rake tasks to completely rebuild your RubyMotion project.}
+  spec.summary       = %q{rake task to rebuild entire rubymotion project}
   spec.homepage      = ""
   spec.license       = ""
 
