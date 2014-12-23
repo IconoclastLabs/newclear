@@ -1,8 +1,22 @@
-# newclear
+![newclear gem logo](http://i.imgur.com/9zP1VGD.png)
 
-*Newclear Gem* - Your one line and walk solution to a ground up rebuild.
+**newclear gem** - Your one line and walk solution to a ground up rebuild.
 
-## Installation
+## Usage
+
+### Run either of these lovely commands and then take a _LONG_ walk.
+
+`[bundle exec] rake nuke`
+
+`nuke` clears everything.  Which actually just runs `rake clean:all && reset-sim && bundle && pod setup && rake pod:install`
+
+
+`[bundle exec] rake newclear`
+
+`newclear` gives you a new and clear run of your build.  This runs `nuke` and then `rake`.
+
+
+## Install
 
 Add this line to your application's Gemfile:
 
@@ -16,18 +30,8 @@ Or install it yourself as:
 
     $ gem install newclear
 
-## Usage
-
-### Run either of these lovely commands and then take a LONG walk.
-
-`[bundle exec] rake nuke`
-
-`nuke` clears everything.  Which actually just runs `rake clean:all && reset-sim && bundle && pod setup && rake pod:install`
-
-
-`[bundle exec] rake newclear`
-
-`newclear` gives you a new and clear run of your build.  This runs `nuke` and then `rake`.
+## Dependency
+We're using Rickert's lovely `reset-sim` gem in our nuke.   So be sure to have accessibility turned on for your terminal, as suggested on [the gem's github page](https://github.com/OTGApps/reset-sim#usage)
 
 ## Contributing
 
