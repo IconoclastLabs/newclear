@@ -4,7 +4,8 @@ unless defined?(Motion::Project::Config)
   raise "This file must be required within a RubyMotion project Rakefile."
 end
 
-lib_dir_path = File.dirname(File.expand_path(__FILE__))
-Motion::Project::App.setup do |app|
-  app.files.unshift(Dir.glob(File.join(lib_dir_path, "project/**/*.rb")))
+
+desc "Completely resets everything for your project"
+task :nuke do
+  p "YAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
 end
