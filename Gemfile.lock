@@ -1,12 +1,14 @@
 PATH
   remote: .
   specs:
-    newclear (1.0)
+    newclear (0.1)
+      reset-sim
 
 GEM
   remote: https://rubygems.org/
   specs:
     rake (10.4.0)
+    reset-sim (1.0)
 
 PLATFORMS
   ruby
