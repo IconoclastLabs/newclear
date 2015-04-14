@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    newclear (0.6)
+    newclear (0.7)
       reset-sim
 
 GEM
