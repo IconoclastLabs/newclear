@@ -1,6 +1,6 @@
 ![newclear gem logo](http://i.imgur.com/9zP1VGD.png)
 
-**newclear gem** - Your one line and walk solution to a ground up rebuild.
+**newclear gem** - Your one line and relax solution to a ground up rebuild of your iOS or Android RubyMotion app.
 
 ## Usage
 
@@ -9,12 +9,20 @@
 #### nuke
 `[bundle exec] rake nuke`
 
-`nuke` clears everything.  Which actually just runs `rake clean:all && reset-sim && bundle && pod setup && rake pod:install`
+`nuke` clears everything.  Which actually just runs the following commands:
+
+```
+rake clean:all 
+reset-sim #if you're on an iOS project
+bundle install
+pod setup && rake pod:install # if you're using motion-cocoapods
+rake gradle:install # if you're using motion-gradle
+```
 
 #### newclear
 `[bundle exec] rake newclear`
 
-`newclear` gives you a new and clear run of your build.  This runs `nuke` and then `rake`.
+`newclear` gives you a new and clear run of your build.  This runs `nuke` and then `rake` (`rake device` for android).
 
 
 ## Install
