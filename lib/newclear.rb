@@ -1,27 +1,25 @@
 # encoding: utf-8
-
 unless defined?(Motion::Project::Config)
   raise "This file must be required within a RubyMotion project Rakefile."
 end
 
+# Bring in functionality
+require_relative "newclear_helper"
+include NewclearHelper
+
 
 desc "Completely resets everything for your project"
 task :nuke do
-  puts "\nCleaning Project..."
-  `rake clean:all`
-  puts "\nResetting simulator..."
-  `reset-sim`
-  puts "\nBundling..."
-  `bundle`
-  puts "\nSetting up cocoapods..."
-  `pod setup`
-  puts "\nInstalling cocoapod dependencies..."
-  `rake pod:install`
+  nuke_project
+  puts NewclearHelper::NUKE_MESSAGE
 end
 
 desc "Completely reset everything in project and run"
 task :newclear do
-  Rake::Task["nuke"].execute
-  puts "Building project..."
-  `rake`
+  # out with the old
+  nuke_project
+  # in with the new
+  build_project
 end
+
+

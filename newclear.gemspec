@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-VERSION = "0.5"
+VERSION = "0.6"
 
 Gem::Specification.new do |spec|
   spec.name          = "newclear"
@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Gant"]
   spec.email         = ["GantMan@gmail.com"]
   spec.description   = %q{Add the nuke/newclear rake tasks to completely rebuild your RubyMotion project.}
-  spec.summary       = %q{rake task to rebuild entire rubymotion project}
-  spec.homepage      = ""
-  spec.license       = ""
+  spec.summary       = %q{rake task to rebuild entire rubymotion project from scratch.}
+  spec.homepage      = "https://github.com/IconoclastLabs/newclear"
+  spec.license       = "MIT"
 
   files = []
   files << 'README.md'
