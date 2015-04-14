@@ -43,7 +43,7 @@ module NewclearHelper
   end
 
   def has_task?(task_name)
-    Rake.application.tasks.count{ |rt| rt.name == "task_name"} > 0
+    Rake.application.tasks.count{ |rt| rt.name == task_name} > 0
   end
 
   def is_android?
