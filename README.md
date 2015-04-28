@@ -2,28 +2,30 @@
 
 **newclear gem** - Your one line and relax solution to a ground up rebuild of your iOS or Android RubyMotion app.
 
-## Usage
+## Why?
+Sometimes a build gets _FUBAR_.   When you run `rake newclear` it builds your project from the ground up without you having to interact at each step in the rebuild process.  _Just type and chillax._
 
-### Run either of these lovely commands and then take a _LONG_ walk.
+## Usage
+**newclear** comes with 3 helpful rake tasks.
 
 #### nuke
 `[bundle exec] rake nuke`
 
-`nuke` clears everything.  Which actually just runs the following commands:
-
-```
-rake clean:all 
-reset-sim #if you're on an iOS project
-bundle install
-pod setup && rake pod:install # if you're using motion-cocoapods
-rake gradle:install # if you're using motion-gradle
-```
+`nuke` clears everything from previous builds and fetches fresh resources in the correct order.  This is excellent for tests.
 
 #### newclear
 `[bundle exec] rake newclear`
 
-`newclear` gives you a new and clear run of your build.  This runs `nuke` and then `rake` (`rake device` for android).
+`newclear` gives you a new and clear run of your build.  This runs `nuke` and then `rake` (`rake device` for android if you have no emulator running).  This is great for kicking off the rebuild to clear any cruft that might be crashing your app.
 
+#### newclear:debug
+`[bundle exec] rake newclear:debug`
+
+`newclear:debug` gives you the detected parameters of your setup.  If you have _any_ complication with newclear, be sure to use this to makes sure newclear is detecing your system setup correctly.
+
+#### How does it work?
+If you want to trace the logic, here's what the command does:
+![newclear logic tree](./_art/newclear_flow_chart.png)
 
 ## Install
 
@@ -48,4 +50,5 @@ We're using Rickert's lovely `reset-sim` gem in our nuke.   So be sure to have a
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+5. Hula hoop and down a beer in under a minute.
+6. Create new Pull Request
