@@ -50,5 +50,6 @@ We're using Rickert's lovely `reset-sim` gem in our nuke.   So be sure to have a
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
-5. Hula hoop and down a beer in under a minute.
-6. Create new Pull Request
+5. Update the flow-chart if applicable [Flow-Chart](https://docs.google.com/drawings/d/1U7gq40TGMi5t8DkBAEfOB57SnjkfiKTRCUdfRtTAaWo/edit?usp=sharing)
+6. Hula hoop and down a beer in under a minute.
+7. Create new Pull Request
