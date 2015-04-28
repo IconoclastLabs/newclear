@@ -1,6 +1,6 @@
-![newclear gem logo](http://i.imgur.com/9zP1VGD.png)
+![newclear gem logo](http://i.imgur.com/9zP1VGD.png) 
 
-**newclear gem** - Your one line and relax solution to a ground up rebuild of your iOS or Android RubyMotion app.
+**newclear** [![Gem Version](https://badge.fury.io/rb/newclear.svg)](http://badge.fury.io/rb/newclear) - Your one line and relax solution to a ground up rebuild of your iOS or Android RubyMotion app.
 
 ## Why?
 Sometimes a build gets _FUBAR_.   When you run `rake newclear` it builds your project from the ground up without you having to interact at each step in the rebuild process.  _Just type and chillax._
