@@ -2,14 +2,14 @@ module NewclearHelper
 
   NUKE_MESSAGE = <<-eos
      *********************************
-             N U K E  COMPLETE 
+             N U K E  COMPLETE
      *********************************
   eos
-  
+
   def nuke_project
     puts "\nCleaning Project..."
     `rake clean:all`
-    
+
     unless is_android?
       puts "\nResetting simulator..."
       `reset-sim`
@@ -17,7 +17,7 @@ module NewclearHelper
 
     puts "\nBundling..."
     `bundle install`
-    
+
     # iOS Depencies
     if has_task? "pod:install"
       puts "\nSetting up cocoapods..."
@@ -35,7 +35,7 @@ module NewclearHelper
 
   def build_project
     puts "Building project..."
-    if is_android?
+    if is_android? and !running_genymotion?
       `rake device`
     else
       `rake`
@@ -48,5 +48,21 @@ module NewclearHelper
 
   def is_android?
     @android ||= system("rake -T | grep -q .apk")
+  end
+
+  # We assume they keep their API in the emulator name
+  def running_genymotion?
+    genymotion_active = false
+    if system("which VBoxManage")
+      running_vms = `VboxManage list runningvms`
+      vm_ids = running_vms.scan(/({[^}]+})\n/).flatten # get all VM IDs
+      # check all to see if any are Genymotion VMs
+      vm_ids.each do |vm_id|
+        genymotion_active = true if system("VBoxManage showvminfo #{vm_id} | grep -q Genymotion")
+      end
+    end
+
+    # Return our findings
+    genymotion_active
   end
 end
