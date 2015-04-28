@@ -36,6 +36,7 @@ module NewclearHelper
   def build_project
     puts "Building project..."
     if is_android? and !running_genymotion?
+      puts "for device"
       `rake device`
     else
       `rake`
@@ -53,7 +54,7 @@ module NewclearHelper
   # We assume they keep their API in the emulator name
   def running_genymotion?
     genymotion_active = false
-    if system("which VBoxManage")
+    if system("which VBoxManage > /dev/null")
       running_vms = `VboxManage list runningvms`
       vm_ids = running_vms.scan(/({[^}]+})\n/).flatten # get all VM IDs
       # check all to see if any are Genymotion VMs

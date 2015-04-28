@@ -22,4 +22,14 @@ task :newclear do
   build_project
 end
 
+namespace :newclear do
+  desc "Print out newclear detected settings"
+  task :debug do
+    puts "If any of these are off, newclearr will not work correctly"
+    puts "***" * 20
+    puts "Is Android? = #{is_android?}"
+    puts "Running Genymotion? = #{running_genymotion?}"
+    puts "***" * 20
+  end
+end
 
