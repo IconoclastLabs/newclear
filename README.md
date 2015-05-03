@@ -13,23 +13,17 @@ Sometimes a build gets _FUBAR_.   When you run `rake newclear` it builds your pr
 
 The most common and useful command.  `newclear` gives you a new and clear run of your build.  All assets cleaned out and then built in the correct order!  This is great for kicking off the rebuild to clear any cruft that might be crashing your app.
 
-**What exactly does it do?**
-
 This runs our `nuke` task and then `rake` (`rake device` for android if you have no emulator running).  Ergo, anything run with newclear is like running on a fresh machine.
 
 #### `[bundle exec] rake newb`
 
 Sometimes helpful, `newb` gives you a new build of your app.  This is excellent for clearing out data before a test, or making sure your application is built in the correct order.
 
-**What exactly does it do?**
-
 This runs our `nuke` task and then `rake build`.
 
 #### `[bundle exec] rake nuke`
 
 Useful for preparing the build, the `nuke` task clears everything from previous builds and fetches fresh resources in the correct order.  After a nuke, you can be sure that your next build is ready to go.
-
-**What exactly does it do?**
 
 This will start off with a complete `rake clean:all` which removes all compiled builds.  We then do a speedy `bundle install` (3 jobs) as your RM resources must be in place before any 3rd party dependencies.  Lastly, we verify if you're using pods/gradle and install dependencies appropriately.
 
