@@ -7,19 +7,24 @@ end
 require_relative "newclear_helper"
 include NewclearHelper
 
-
-desc "Completely resets everything for your project"
-task :nuke do
-  nuke_project
-  puts NewclearHelper::NUKE_MESSAGE
-end
-
 desc "Completely reset everything in project and run"
 task :newclear do
   # out with the old
   nuke_project
   # in with the new
   build_project
+end
+
+desc "Completely reset everything in project and create a build"
+task :newb do
+  nuke_project
+  `rake build`
+end
+
+desc "Completely resets everything for your project"
+task :nuke do
+  nuke_project
+  puts NewclearHelper::NUKE_MESSAGE
 end
 
 namespace :newclear do
