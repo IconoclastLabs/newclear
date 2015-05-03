@@ -15,8 +15,9 @@ module NewclearHelper
       `reset-sim`
     end
 
+    # Fast bundle
     puts "\nBundling..."
-    `bundle install`
+    `bundle install --jobs=3 --retry=3`
 
     # iOS Depencies
     if has_task? "pod:install"
