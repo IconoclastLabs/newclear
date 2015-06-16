@@ -7,7 +7,7 @@ Sometimes a build gets _FUBAR_.   When you run `rake newclear` it builds your pr
 
 ## Usage
 **newclear** comes with 4 helpful rake tasks _but..._
-**99% of the time you want to run** `rake newclear`.  The other rake tasks are sometimes helpful and credited in order of importance.
+**99% of the time you want to run** `rake newclear`.
 
 ### :crown: `[bundle exec] rake newclear`
 
@@ -21,7 +21,7 @@ This runs our `nuke` task and then `rake` (`rake device` for android if you have
 Just kidding.  If you want to trace the logic, here you go!
 ![newclear logic tree](./_art/newclear_flow_chart.png)
 
-## Ancillary Usage
+## Ancillary Rake Tasks
 
 #### `[bundle exec] rake newb`
 
@@ -54,7 +54,7 @@ Or install it yourself as:
     $ gem install newclear
 
 ## Dependency
-We're using Rickert's lovely `reset-sim` gem in our nuke.   So be sure to have accessibility turned on for your terminal, as suggested on [the gem's github page](https://github.com/OTGApps/reset-sim#usage)
+We're using Rickert's lovely `reset-sim` gem in our nuke (when dealing with iOS).   So be sure to have accessibility turned on for your terminal, as suggested on [the gem's github page](https://github.com/OTGApps/reset-sim#usage)
 
 ## Contributing
 
