@@ -18,7 +18,7 @@ end
 desc "Completely reset everything in project and create a build"
 task :newb do
   nuke_project
-  `rake build`
+  `rake build:simulator`
 end
 
 desc "Completely resets everything for your project"
