@@ -38,9 +38,9 @@ module NewclearHelper
     puts "Building project..."
     if is_android? and !running_genymotion?
       puts "for device"
-      `rake device`
+      exec('rake device')
     else
-      `rake`
+      exec('rake')
     end
   end
 
