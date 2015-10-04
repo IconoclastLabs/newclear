@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-VERSION = "1.3"
+VERSION = "1.4"
 
 Gem::Specification.new do |spec|
   spec.name          = "newclear"
